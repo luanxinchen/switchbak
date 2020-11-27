@@ -1,0 +1,201 @@
+
+******************************************************************************
+* Copyright (c) 2004-2015 Hangzhou H3C Tech. Co., Ltd. All rights reserved.  *
+* Without the owner's prior written consent,                                 *
+* no decompiling or reverse-engineering shall be allowed.                    *
+******************************************************************************
+
+
+Login authentication
+
+
+Username:xiaofeng.mao
+Password:
+<11F-5>sys
+System View: return to User View with Ctrl+Z.
+[11F-5]user-interface vty 0 4
+[11F-5-ui-vty0-4]screen-length 0
+[11F-5-ui-vty0-4]quit
+[11F-5]quit
+<11F-5>dis cur
+#
+ version 5.20.99, Release 1107
+#
+ sysname 11F-5
+#
+ clock timezone Beijing add 08:00:00
+#
+ domain default enable system
+#
+ ipv6
+#
+ telnet server enable
+#
+ gvrp
+#
+ password-recovery enable
+#
+vlan 1
+#
+vlan 4 to 15
+#
+vlan 20
+#
+vlan 30
+#
+vlan 50
+#
+vlan 90
+#
+vlan 100
+#
+vlan 110
+#
+vlan 120
+#
+vlan 130
+#
+vlan 140
+#
+vlan 200 to 203
+#
+vlan 220
+#
+vlan 250 to 251
+#
+vlan 1000
+#
+domain system
+ access-limit disable
+ state active
+ idle-cut disable
+ self-service-url disable
+#
+user-group system
+ group-attribute allow-guest
+#
+local-user Transwarp
+ password cipher $c$3$D0J2xt2cKJGV1f8i2ylGePhhCs7UVH/lpCWnEXdhArU=
+ authorization-attribute level 3
+ service-type ssh telnet terminal
+ service-type ftp
+ service-type web
+local-user xiaofeng.mao
+ password cipher $c$3$oxKRhoCSQV4ejFd7xVUdNA6z5iLyXnvkLmcuBtKQ7p8=
+ authorization-attribute level 3
+ service-type ssh telnet terminal
+ service-type ftp
+ service-type web
+#
+interface NULL0
+#
+interface Vlan-interface1
+#
+interface Vlan-interface100
+ ip address 172.16.100.15 255.255.255.0
+#
+interface Vlan-interface120
+#
+interface GigabitEthernet1/0/1
+ port access vlan 120
+#
+interface GigabitEthernet1/0/2
+ port access vlan 120
+#
+interface GigabitEthernet1/0/3
+ port access vlan 120
+#
+interface GigabitEthernet1/0/4
+ port access vlan 120
+#
+interface GigabitEthernet1/0/5
+ port access vlan 120
+#
+interface GigabitEthernet1/0/6
+ port access vlan 120
+#
+interface GigabitEthernet1/0/7
+ port access vlan 120
+#
+interface GigabitEthernet1/0/8
+ port access vlan 120
+#
+interface GigabitEthernet1/0/9
+ port access vlan 120
+#
+interface GigabitEthernet1/0/10
+ port access vlan 120
+#
+interface GigabitEthernet1/0/11
+ port access vlan 120
+#
+interface GigabitEthernet1/0/12
+ port access vlan 120
+#
+interface GigabitEthernet1/0/13
+ port access vlan 130
+#
+interface GigabitEthernet1/0/14
+ port access vlan 140
+#
+interface GigabitEthernet1/0/15
+ port access vlan 140
+#
+interface GigabitEthernet1/0/16
+ port access vlan 140
+#
+interface GigabitEthernet1/0/17
+ port access vlan 130
+#
+interface GigabitEthernet1/0/18
+ port access vlan 130
+#
+interface GigabitEthernet1/0/19
+ port access vlan 130
+#
+interface GigabitEthernet1/0/20
+ port access vlan 130
+#
+interface GigabitEthernet1/0/21
+ port access vlan 140
+#
+interface GigabitEthernet1/0/22
+ port access vlan 130
+#
+interface GigabitEthernet1/0/23
+ port access vlan 120
+#
+interface GigabitEthernet1/0/24
+ description SW6-46
+ port link-type trunk
+ port trunk permit vlan all
+ gvrp
+#
+interface GigabitEthernet1/0/25
+#
+interface GigabitEthernet1/0/26
+#
+interface GigabitEthernet1/0/27
+#
+interface GigabitEthernet1/0/28
+#
+ ip route-static 0.0.0.0 0.0.0.0 172.16.100.254
+#
+ undo info-center logfile enable
+#
+ ntp-service unicast-server 172.16.2.105
+#
+ ssh server enable
+#
+ ip https enable
+#
+ load xml-configuration
+#
+user-interface aux 0
+user-interface vty 0 4
+ authentication-mode scheme
+ screen-length 0
+user-interface vty 5 15
+#
+return
+<11F-5>quit
