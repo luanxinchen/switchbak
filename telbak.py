@@ -8,7 +8,7 @@ import datetime
 import os
 
 now = datetime.datetime.now()
-path = "./conf/%s"%now.strftime('%Y%m%d')
+path = "/mnt/nas/switches/%s"%now.strftime('%Y%m%d')
 if not os.path.exists(path):
     os.makedirs(path)
 
