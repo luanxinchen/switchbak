@@ -9,7 +9,7 @@ import os
 #获取当前时间
 now = datetime.datetime.now()
 
-#设置输出路径及时间戳
+#设置输出路径及时间戳格式
 path = "./conf/%s"%now.strftime('%Y%m%d')
 
 #创建目录
@@ -53,7 +53,6 @@ for switch in switches:
         ssh.close()
 
         #输出日志
-        print (str(now.strftime('%Y-%m-%d-%H:%M:%S ')+host+' Success'))
+        print (str(now.strftime('%Y-%m-%d %H:%M:%S ')+host+' Success'))
     except:
         print (str(now.strftime('%Y-%m-%d %H:%M:%S ')+host+' Failed'))
-

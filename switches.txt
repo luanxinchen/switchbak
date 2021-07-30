@@ -1,2 +1,2 @@
-172.16.100.14 xiaofeng.mao Password@1234
-172.16.100.15 xiaofeng.mao Password@1234
+172.16.100.14 username password
+172.16.100.15 username password
