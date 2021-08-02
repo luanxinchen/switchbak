@@ -23,11 +23,15 @@ for switch in switches:
         host = switch.split(' ')[0]
         user = switch.split(' ')[1]
         passwd = switch.split(' ')[2].strip('\n')
+        print(host)
+        print(user)
+        print(passwd)
 
         #建立ssh连接
         ssh = paramiko.SSHClient()
         ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-        ssh.connect(hostname=host,username=user,password=passwd)
+        ssh.connect(hostname=host,username=user,password=passwd,allow_agent=False,look_for_keys=False)
+
 
         #调用shell
         command = ssh.invoke_shell()
