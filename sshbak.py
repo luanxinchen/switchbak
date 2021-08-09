@@ -10,14 +10,14 @@ import os
 now = datetime.datetime.now()
 
 #设置输出路径及时间戳格式
-path = "./conf/%s"%now.strftime('%Y%m%d')
+path = "/mnt/nas/switches/%s"%now.strftime('%Y%m%d')
 
 #创建目录
 if not os.path.exists(path):
     os.makedirs(path)
 
-#读取交换机信息
-switches = open(r'./switches.txt').readlines()
+#读取交换机信息(指定交换机文件路径)
+switches = open(r'/root/switchbak/switches.txt').readlines()
 for switch in switches:
     try:
         host = switch.split(' ')[0]
